@@ -15,7 +15,29 @@ import java.util.Scanner;
 public class Ejercicio5 {
 
 	public static void main(String[] args) {
-		Scanner read = new Scanner (System.in);
+
+		// Frase compuesta por las palabras
+		String fraseUsuario = " ";
+
+		// Palabras de la frase introducidas por el usuario
+		String palabras = " ";
+
+		// Scanner para leer por teclado
+		Scanner read = new Scanner(System.in);
+
+		// Le solicitamos al usuario las palabras
+		System.out.println("Introduce una frase palabra por palabra: ");
+
+		// Mientras la palabra introducida sea distinta a "fin"
+		while (!palabras.equalsIgnoreCase("fin")) {
+
+			// Le agregamos a la frase todas las palabras introducidas
+			fraseUsuario += palabras + " ";
+			palabras = read.nextLine();
+		}
+
+		// Mostramos la frase final completa
+		System.out.println(fraseUsuario);
 	}
 
 }
