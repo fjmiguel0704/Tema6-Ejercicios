@@ -36,8 +36,11 @@ public class Ejercicio5 {
 			palabras = read.nextLine();
 		}
 
+		// Eliminamos los espacios en blanco del principio y final de la cadena
+		String sinEspacios = fraseUsuario.trim();
+		
 		// Mostramos la frase final completa
-		System.out.println(fraseUsuario);
+		System.out.println(sinEspacios);
 	}
 
 }
