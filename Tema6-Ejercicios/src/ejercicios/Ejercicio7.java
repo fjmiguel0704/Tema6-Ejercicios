@@ -16,19 +16,49 @@ import java.util.Scanner;
 public class Ejercicio7 {
 
 	public static void main(String[] args) {
+
+		// Frase introducida por el usuario
 		String fraseUsuario;
-		Scanner read = new Scanner (System.in);
+
+		// Fase introducida por el usuario a la inversa
+		String inversaFraseUsuario = " ";
+
+		// Creamos el Scanner para leer por teclado
+		Scanner read = new Scanner(System.in);
+
+		// Le pedimos al usuario que introduzca una frase
 		System.out.println("Introduce una frase:");
-		fraseUsuario=read.nextLine();
-		
-		for (int i = fraseUsuario.length()-1; i>=0;i--) {
-			System.out.print(fraseUsuario.charAt(i));
+		fraseUsuario = read.nextLine();
+
+		// Guardaremos en la variable "inversaFraseUsuario" la frase introducida por el
+		// usuario a la inversa
+		for (int i = fraseUsuario.length() - 1; i >= 0; i--) {
+			inversaFraseUsuario += fraseUsuario.charAt(i);
 		}
-		
-		if (fraseUsuario.startsWith(fraseUsuario)&&fraseUsuario.endsWith(fraseUsuario)) {
+
+		// Eliminamos los espacios que contiene la frase original entre palabra y
+		// palabra
+		String fraseUsuarioReplace = fraseUsuario.replace(" ", "");
+
+		// Eliminamos los espacios que contiene la frase inversa entre palabra y palabra
+		String auxFraseUsuarioReplace = inversaFraseUsuario.replace(" ", "");
+
+//		System.out.println(fraseUsuario);
+//		System.out.println();
+//		System.out.println(auxFraseUsuario);
+//		System.out.println();
+//		System.out.println(fraseUsuarioReplace);
+//		System.out.println();
+//		System.out.println(auxFraseUsuarioReplace);
+
+		// Comprobamos si la frase original sin espacios entre medio es igual a la frase
+		// inversa sin espacios entre medio, en caso de ser iguales, mostrará que son
+		// palíndromas
+		if (fraseUsuarioReplace.equalsIgnoreCase(auxFraseUsuarioReplace)) {
 			System.out.println("La frase es palíndroma");
 		}
-		
+
+		// En caso contrario, no son palíndromas
 		else {
 			System.out.println("La frase no es palíndroma");
 		}
