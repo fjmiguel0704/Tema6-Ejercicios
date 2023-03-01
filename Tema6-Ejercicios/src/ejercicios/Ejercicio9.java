@@ -26,7 +26,7 @@ public class Ejercicio9 {
 		// Palabra introducida por el usuario
 		String palabraUsuario;
 		
-		// Palabra 
+		// Palabra codificada al segundo conjunto
 		String palabraCodificada="";
 		
 		// Creamos el scanner para leer por teclado
@@ -38,14 +38,22 @@ public class Ejercicio9 {
 		// Definimos el segundo conjunto de caracteres
 		char conjunto2[] = { 'p', 'v', 'i', 'u', 'm', 't', 'e', 'r', 'k', 'q', 's' };
 		
+		// Le pedimos al usuario que introduzca una palabra 
 		System.out.println("Introduce una palabra: ");
 		palabraUsuario=read.next();
 		
+		// Convertimos todos los carácteres de la palabra del usuario en minúsculas 
 		palabraUsuario=palabraUsuario.toLowerCase();
 		
+		// Recorremos la palabra introducida por el usuario 
 		for (int i = 0; i<palabraUsuario.length();i++) {
+			// Y vamos formando la palabra codificada caracter a caracter, llamando a la función 
+			// codifica, a la que le pasamos como parámetro el conjunto1, conjunto2 y letra a 
+			// letra de la palabra
 			palabraCodificada+=MetodoEj9.codifica(conjunto1, conjunto2, palabraUsuario.charAt(i));
 		}
+		
+		// Mostramos la palabra codificada 
 		System.out.println(palabraCodificada);
 	}
 
