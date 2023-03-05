@@ -39,10 +39,14 @@ public class Ejercicio12 {
 		Arrays.sort(palabra1);
 		Arrays.sort(palabra2);
 
+		// Comprobamos si ambas cadenas son iguales
+
+		// Si son iguales, serán anagramas
 		if (Arrays.equals(palabra1, palabra2)) {
 			System.out.println("Las palabras son anagramas");
 		}
 
+		// Si no, no serán anagramas
 		else {
 			System.out.println("Las palabras no son anagramas");
 		}
