@@ -13,41 +13,29 @@ public class Ejercicio12 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		String palabraUsuario1 = "";
-//		String palabraUsuario2 = "";
-//		String copiaPalabraUsuario1;
-//
-//		Scanner read = new Scanner(System.in);
-//
-//		System.out.println("Introduce una palabra: ");
-//		palabraUsuario1 = read.next();
-//
-//		System.out.println("Introduce otra palabra: ");
-//		palabraUsuario2 = read.next();
-//
-//		char palabra1[] = palabraUsuario1.toCharArray();
-//		char palabra2[] = palabraUsuario2.toCharArray();
-//
-//		for (int i = 0; i < palabra1.length; i++) {
-//			for (int j = 0; j < palabra2.length; j++) {
-//			
-//			}
-//		}
-		
+
+		// Palabra 1
 		String palabraUsuario1 = "";
+
+		// Palabra 2
 		String palabraUsuario2 = "";
 
+		// Scanner para leer por teclado
 		Scanner read = new Scanner(System.in);
 
+		// Pedimos al usuario que introduzca una palabra
 		System.out.println("Introduce una palabra: ");
 		palabraUsuario1 = read.next();
 
+		// Pedimos al usuario que introduzca otra una palabra
 		System.out.println("Introduce otra palabra: ");
 		palabraUsuario2 = read.next();
 
+		// Pasamos las cadenas a arrays de caracteres
 		char palabra1[] = palabraUsuario1.toCharArray();
 		char palabra2[] = palabraUsuario2.toCharArray();
 
+		// Los ordenamos alfabéticamente
 		Arrays.sort(palabra1);
 		Arrays.sort(palabra2);
 
