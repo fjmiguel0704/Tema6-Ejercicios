@@ -3,6 +3,8 @@ package ejercicios;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import metodos.MetodoEj14;
+
 public class Ejercicio14 {
 	/**
 	 * Implementar el juego del anagrama, que consiste en que un jugador escribe una
@@ -17,66 +19,28 @@ public class Ejercicio14 {
 	 * @param args
 	 */
 
-	// La frase a adivinar por el jugador 2
-	static String palabraJ1;
-
-	static String tranposicion(String palabraJ1) {
-		// Guardará de manera desordenada la palabra por carácteres
-		char[] palabraDes = new char[palabraJ1.length()];
-		// Variable auxiliar que comprueba si no se repite
-		int numGenerados = 0;
-		// Le da un valor al array
-		Arrays.fill(palabraDes, '-');
-		// Posiciones para saber donde guardar el valor
-		int posicion;
-
-		// Genera un número aleatorio
-		posicion = (int) (Math.random() * palabraJ1.length());
-
-		// Mientras el número de intentos sea menor que la longitud sigue ejecutandose
-		while (numGenerados < palabraJ1.length()) {
-			// Comprueba si la posición del array aleatorio es igual a un guión
-			if (palabraDes[posicion] == '-') {
-				// Añade la letra de la frase a una posición aleatoria en el array
-				palabraDes[posicion] = palabraJ1.charAt(numGenerados);
-				// Se le suma a los intentos
-				numGenerados++;
-			}
-			// Genera un número aleatorio
-			posicion = (int) (Math.random() * palabraJ1.length());
-		}
-
-		// Devuelve como una cadena desordenada
-		return String.valueOf(palabraDes);
-	}
-
 	public static void main(String[] args) {
-		// Variable que contiene la respuesta del usuario
-		String respuesta;
+		String palabraJ1;
+		String intentosJ2;
+		int posArrayDes = 0;
+		int posicionCaracter=0;
 
-		// Creación de escáner
-		Scanner key = new Scanner(System.in);
+		Scanner read = new Scanner(System.in);
+		System.out.println("Jugador 1, introduce una palabra: ");
+		palabraJ1 = read.next();
 
-		// Pide frase al usuario
+		char palabraJ1Array[] = palabraJ1.toCharArray();
+		char palabraDesArray[] = new char[palabraJ1Array.length];
+
+		MetodoEj14.transposicion(posicionCaracter, posArrayDes, palabraJ1Array, palabraDesArray);
+		System.out.println(palabraDesArray);
+
 		do {
-			System.out.println("Jugador 1, introduce una frase: ");
-			palabraJ1 = key.nextLine();
-
-		} while (palabraJ1.equals(""));
-
-		// Muestra la pista al usuario
-		System.out.println(tranposicion(palabraJ1));
-
-		do {
-			// Pide la respuesta al usuario
 			System.out.println("Jugador 2, intenta adivinar la palabra: ");
-			respuesta = key.nextLine();
-			// Comprueba si el usuario ha acertado la frase
-		} while (!respuesta.equals(palabraJ1));
+			intentosJ2 = read.next();
+		} while (!intentosJ2.equals(palabraJ1));
 
-		// Le dice que ha ganado
-		System.out.println("Enhorabuena, Ha adivinado");
+		System.out.println("¡Ha adivinado la palabra!");
 
 	}
-
 }
