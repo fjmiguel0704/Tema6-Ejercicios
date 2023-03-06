@@ -30,7 +30,7 @@ public class Ejercicio10 {
 
 		// Le pedimos al usuario que introduzca una palabra
 		System.out.println("Introduce una palabra: ");
-		palabraUsuario = read.next();
+		palabraUsuario = read.nextLine();
 
 		// Convertimos todos los carácteres de la palabra del usuario en minúsculas
 		palabraUsuario = palabraUsuario.toLowerCase();
